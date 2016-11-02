@@ -7,6 +7,9 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.3/main" >> /etc/apk/repositories
     rm -rf /var/cache/apk/* && \
     chown -R nginx:www-data /var/lib/nginx
 
+# Add bash
+RUN apk add --update bash
+
 # Add the files
 ADD root /
 
