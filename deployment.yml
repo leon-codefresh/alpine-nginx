@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: test
+          image: leoncodefresh/alpine-nginx:$DOCKER_IMAGE_TAG
+          ports:
+            - containerPort: 80
+              name: http
